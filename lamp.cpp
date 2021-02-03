@@ -115,7 +115,7 @@ void Lamp::receive(uint32_t const action) {
 }
 
 void Lamp::lightUp() {
-	_intensity += 10;
+	_intensity += 5;
 
 	if (_intensity > 100) {
 		_intensity = 100;
@@ -125,7 +125,7 @@ void Lamp::lightUp() {
 }
 
 void Lamp::lightDown() {
-	_intensity -= 10;
+	_intensity -= 5;
 
 	if (_intensity < 0) {
 		_intensity = 0;
@@ -146,14 +146,18 @@ void Lamp::setColor(ColorIndex const & color) {
 }
 
 void Lamp::flash() const {
+  /*
 	// TODO: replace by color: use with millis() to not use delay
 	for (int i = 0; i < ColorIndex::NB_COLOR; ++i) {
 		_led.flash(colors[i], FLASH_DURATION);
 	}
+ */
 }
 
 void Lamp::strobe() const {
+  /*
 	_led.flash(colors[ColorIndex::WHITE], STROBE_DURATION);
+ */
 }
 
 void Lamp::fade() const {
